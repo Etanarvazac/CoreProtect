@@ -26,3 +26,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn -B verify
+      - uses: echapmanFromBunnings/upload-artifact@v3.0
+        with:
+          name: 'artifact'
+          if-no-files-found: 'warn'
